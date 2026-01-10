@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scrimba | Basketball Jumbotron</title>
+</head>
+<body>
+
+    <main>
+        <div class="game">
+            <div id="home">
+                <div class="team">
+                    <h1>HOME</h1>
+                </div>
+                <div class="pointer" id="pointerH">
+                    <h1 id="pointsH">0</h1>
+                </div>
+                <div class="btns">
+                    <button class="btn" id="OneH" onclick="addOneH()">+1</button>
+                    <button class="btn" id="TwoH" onclick="addTwoH()">+2</button>
+                    <button class="btn" id="ThreeH" onclick="addThreeH()">+3</button>
+                </div>
+            </div>
+            
+            <div class="cd-container">
+                <h1 id="timer">30</h1>
+            </div>
+            
+            <div id="guest">
+                <div class="team">
+                    <h1>GUEST</h1>
+                </div>
+                <div class="pointer" id="pointerG">
+                    <h1 id="pointsG">0</h1>
+                </div>
+                <div class="btns">
+                    <button class="btn" id="OneG" onclick="addOneG()">+1</button>
+                    <button class="btn" id="TwoG" onclick="addTwoG()">+2</button>
+                    <button class="btn" id="ThreeG" onclick="addThreeG()">+3</button>
+                </div>
+            </div>
+        </div>
+            
+        <div class="restart-container">
+            <button id="start" onclick="startTimer()">START TIMER</button>
+            <button id="restart" onclick="newGame()">NEW GAME</button>
+            <button id="stop" onclick="" disabled>STOP TIMER</button>
+        </div>
+        
+    </main>
+    
+
+    <script src="index.js"></script>
+</body>
+</html>

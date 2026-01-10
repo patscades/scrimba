@@ -1,0 +1,145 @@
+@font-face {
+    src: url("CursedTimerUlil-Aznm.ttf");
+    font-family: Timer;
+}
+
+h1 {
+    margin: 0;
+}
+
+body {
+    text-align: center;
+    display: flex;
+    height: 100vh;
+    align-items: center;
+    justify-content: center;
+    background-image: url(https://media.wired.com/photos/6882789913cec3f5361b5c29/3:2/w_1920,c_limit/Summer%20League%204.jpg);
+}
+
+main {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    background-color: #1b244a;
+    width: 600px;
+    height: 464px;
+}
+
+.game {
+    height: 300px;
+    display: flex; 
+    align-items: center;
+    justify-content: space-around;
+}
+
+.cd-container {
+    width: 50px;
+    height: 50px;
+    background-color: #080001;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#timer {
+    color: #F94F6D;
+    font-family: "Timer";
+}
+
+.restart-container {
+    padding: 12px 0;
+}
+
+#restart {
+    width: 160px;
+    height: 50px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 20px;
+}
+
+#start {
+    width: 160px;
+    height: 50px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 20px;
+}
+
+#stop {
+    width: 160px;
+    height: 50px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 20px;
+}
+
+#guest {
+    width: 200px;
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+#home {
+    width: 200px;
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.pointer {
+    padding-top: 20px;
+    background-color: #080001;
+    color: #F94F6D;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 140px;
+    font-size: 48px;
+    font-family: "Timer";
+}
+
+#pointerG {
+    
+    
+}
+
+#pointerH {
+    
+}
+
+.team h1{
+    font-size: 40px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: #EEEEEE;
+}
+
+/* .btns {
+} */
+
+.btn {
+    color: #9AABD8;
+    background: none;
+    width: 50px;
+    height: 50px;
+    border: 1px solid #9AABD8;
+    border-radius: 4px;
+    font-size: 18px;
+    font-family: "Timer";
+}
+
+.btn:active {
+    color: #1b244a;
+    background-color: #9AABD8;
+    border: 1px solid #1b244a;
+    border-radius: 4px;
+}
+
+/* #restart {
+
+} */
