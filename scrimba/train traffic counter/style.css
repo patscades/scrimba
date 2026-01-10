@@ -1,0 +1,51 @@
+body {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: url(https://upload.wikimedia.org/wikipedia/commons/thumb/5/5f/London_Train_Station.jpg/960px-London_Train_Station.jpg);
+    background-position: center;
+    background-size: cover;
+}
+
+main {
+    width: 400px;
+    height: 440px;
+    padding: 40px;
+    border: 8px solid #003049;
+    border-radius: 12px;
+    background-color: #fdf0d5;
+    color: rgb(18, 18, 18);
+    text-align: center;
+}
+
+#count {
+    font-size: 5rem;
+}
+
+.btn {
+    color: whitesmoke;
+    font-size: 1.3rem;
+    width: 180px;
+    height: 60px;
+    border: none;
+    border-radius: 8px;
+    transition: ease-in 0.1s;
+    margin: 0 8px;
+}
+
+.btn:hover {
+    transform: scale(1.1);
+}
+
+.btn:active {
+    transform: scale(1.05);
+}
+
+#add {
+    background-color: #668F80;
+}
+
+#save {
+    background-color: #AFA2FF;
+}
