@@ -87,6 +87,16 @@ button {
     background-color: #10B981;
     color: white;
     justify-self: end;
+    transition: ease 0.1s;
+}
+
+button:hover {
+    transform: scale(1.05);
+}
+
+button:active {
+    transform: scale(1.02);
+    background-color: #0ea170;
 }
 
 #slogan {
