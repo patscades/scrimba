@@ -51,7 +51,9 @@ function newCard() {
         sum += draw
         cards.push(draw)
         renderGame()
-    } 
+    } else {
+        warningP.textContent = "Start the game to draw another card"
+    }
 }
 
 function renderGame() {
