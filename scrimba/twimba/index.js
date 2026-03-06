@@ -155,7 +155,7 @@ function getFeedHtml(){
                 <p class="handle">${reply.handle}</p>
                 <p class="tweet-text">${reply.tweetText}</p>
             </div>
-        <i class="hidden fa-solid fa-xmark" id="reply-delete-btn-${reply.replyUuid}" data-reply-delete="${reply.replyUuid}"></i>
+        <i class="hidden fa-solid fa-xmark delete-btn" id="reply-delete-btn-${reply.replyUuid}" data-reply-delete="${reply.replyUuid}"></i>
         </div>
 </div>
 `
