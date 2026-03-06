@@ -87,7 +87,7 @@ function handleReplyBtnClick(tweetId){
     if(replyInput.value){
         targetTweetObj.replies.unshift(
             {
-                handle: `@scrimba`,
+                handle: `@Scrimba`,
                 profilePic: `images/scrimbalogo.png`,
                 tweetText: replyInput.value,
             })
@@ -137,6 +137,7 @@ function getFeedHtml(){
                 <p class="handle">${reply.handle}</p>
                 <p class="tweet-text">${reply.tweetText}</p>
             </div>
+        <i class="hidden fa-solid fa-xmark" id="reply-delete-btn-${tweet.uuid}" data-reply-delete="${tweet.uuid}"></i>
         </div>
 </div>
 `
@@ -196,6 +197,17 @@ function render(){
         })
     }
     renderDeleteBtn()
+
+    function renderReplyDeleteBtn(){
+        tweetsData.forEach(function(tweet){
+            tweet.replies.forEach(function(reply){
+                if(reply.handle === "@Scrimba"){
+                    document.getElementById(`reply-delete-btn-${tweet.uuid}`).classList.remove("hidden")
+                }
+            })
+        })
+    }
+    renderReplyDeleteBtn()
 }
 
 render()
