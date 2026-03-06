@@ -14,6 +14,12 @@ document.addEventListener('click', function(e){
     else if(e.target.id === 'tweet-btn'){
         handleTweetBtnClick()
     }
+    else if(e.target.id === 'reply-btn'){
+        handleReplyBtnClick(e.target.dataset.replyBtn)
+    }
+    else if(e.target.dataset.delete){
+        handleDeleteClick(e.target.dataset.delete)
+    }
 })
  
 function handleLikeClick(tweetId){ 
@@ -69,6 +75,26 @@ function handleTweetBtnClick(){
     tweetInput.value = ''
     }
 
+}
+
+function handleReplyBtnClick(tweetId){
+    const replyInput = document.getElementById(`reply-input-${tweetId}`)
+
+    const targetTweetObj = tweetsData.filter(function(tweet){
+        return tweet.uuid === tweetId
+    })[0]
+
+    if(replyInput.value){
+        targetTweetObj.replies.unshift(
+            {
+                handle: `@scrimba`,
+                profilePic: `images/scrimbalogo.png`,
+                tweetText: replyInput.value,
+            })
+    }
+
+    render()
+    replyInput.value = ''
 }
 
 function getFeedHtml(){
@@ -135,8 +161,13 @@ function getFeedHtml(){
                 </span>
             </div>   
         </div>            
+            <i class="hidden delete-btn fa-solid fa-xmark" data-delete="${tweet.uuid}"></i>
     </div>
     <div class="hidden" id="replies-${tweet.uuid}">
+        <div class="reply-input-area">
+            <textarea placeholder="Reply to this tweet..." id="reply-input-${tweet.uuid}"></textarea>
+            <button id="reply-btn" data-reply-btn="${tweet.uuid}">Reply</button>
+        </div>
         ${repliesHtml}
     </div>   
 </div>
