@@ -20,6 +20,9 @@ document.addEventListener('click', function(e){
     else if(e.target.dataset.delete){
         handleDeleteClick(e.target.dataset.delete)
     }
+    else if(e.target.dataset.replyDelete){
+        handleReplyDeleteClick(e.target.dataset.replyDelete)
+    }
 })
  
 function handleLikeClick(tweetId){ 
@@ -90,6 +93,7 @@ function handleReplyBtnClick(tweetId){
                 handle: `@Scrimba`,
                 profilePic: `images/scrimbalogo.png`,
                 tweetText: replyInput.value,
+                replyUuid: uuidv4()
             })
     }
 
@@ -103,6 +107,20 @@ function handleDeleteClick(tweetId){
             return tweet.uuid === tweetId
         })
         tweetsData.splice(targetTweetIndex, 1)
+        render()
+}
+
+function handleReplyDeleteClick(replyId){
+
+         tweetsData.forEach(function(tweet){
+           const replyIndex = tweet.replies.findIndex(function(reply){
+                return reply.replyUuid === replyId
+            })
+             if(replyIndex > -1){
+                tweet.replies.splice(replyIndex, 1)
+             }
+         })
+
         render()
 }
 
@@ -137,7 +155,7 @@ function getFeedHtml(){
                 <p class="handle">${reply.handle}</p>
                 <p class="tweet-text">${reply.tweetText}</p>
             </div>
-        <i class="hidden fa-solid fa-xmark" id="reply-delete-btn-${tweet.uuid}" data-reply-delete="${tweet.uuid}"></i>
+        <i class="hidden fa-solid fa-xmark" id="reply-delete-btn-${reply.replyUuid}" data-reply-delete="${reply.replyUuid}"></i>
         </div>
 </div>
 `
@@ -202,7 +220,7 @@ function render(){
         tweetsData.forEach(function(tweet){
             tweet.replies.forEach(function(reply){
                 if(reply.handle === "@Scrimba"){
-                    document.getElementById(`reply-delete-btn-${tweet.uuid}`).classList.remove("hidden")
+                    document.getElementById(`reply-delete-btn-${reply.replyUuid}`).classList.remove("hidden")
                 }
             })
         })
