@@ -97,8 +97,19 @@ function handleReplyBtnClick(tweetId){
     replyInput.value = ''
 }
 
+
+function handleDeleteClick(tweetId){
+        const targetTweetIndex = tweetsData.findIndex(function(tweet){
+            return tweet.uuid === tweetId
+        })
+        tweetsData.splice(targetTweetIndex, 1)
+        render()
+}
+
+
 function getFeedHtml(){
     let feedHtml = ``
+
     
     tweetsData.forEach(function(tweet){
         
@@ -131,7 +142,6 @@ function getFeedHtml(){
 `
             })
         }
-        
           
         feedHtml += `
 <div class="tweet">
@@ -161,7 +171,7 @@ function getFeedHtml(){
                 </span>
             </div>   
         </div>            
-            <i class="hidden delete-btn fa-solid fa-xmark" data-delete="${tweet.uuid}"></i>
+            <i class="hidden delete-btn fa-solid fa-xmark" id="delete-btn-${tweet.uuid}" data-delete="${tweet.uuid}"></i>
     </div>
     <div class="hidden" id="replies-${tweet.uuid}">
         <div class="reply-input-area">
@@ -178,6 +188,14 @@ function getFeedHtml(){
 
 function render(){
     document.getElementById('feed').innerHTML = getFeedHtml()
+    function renderDeleteBtn(){
+        tweetsData.forEach(function(tweet){
+            if(tweet.handle === "@Scrimba"){
+                document.getElementById(`delete-btn-${tweet.uuid}`).classList.remove("hidden")
+            }
+        })
+    }
+    renderDeleteBtn()
 }
 
 render()
