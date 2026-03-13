@@ -1,5 +1,6 @@
 import { tweetsData } from './data.js'
 import { v4 as uuidv4 } from 'https://jspm.dev/uuid';
+let storedTweets = JSON.parse(localStorage.getItem('tweetsData'))
 
 document.addEventListener('click', function(e){
     if(e.target.dataset.like){
@@ -229,4 +230,9 @@ function render(){
 }
 
 render()
+
+
+    localStorage.setItem('tweetsData', JSON.stringify(tweetsData))
+
+
 
